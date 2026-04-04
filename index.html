@@ -6,6 +6,7 @@
   <title>Wyoming America 250 Art Collection</title>
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -13,24 +14,29 @@
       color: #1f1a17;
       line-height: 1.6;
     }
+
     a { text-decoration: none; }
+
     .container {
       width: 100%;
       max-width: 1180px;
       margin: 0 auto;
       padding: 0 20px;
     }
+
     .hero {
       background: linear-gradient(180deg, #2a211d 0%, #4a3a30 100%);
       color: #fff8ef;
       padding: 70px 0;
     }
+
     .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 36px;
       align-items: center;
     }
+
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.22em;
@@ -39,30 +45,36 @@
       color: #e7c36a;
       margin-bottom: 14px;
     }
+
     h1 {
       font-size: 52px;
       line-height: 1.08;
       margin: 0 0 18px;
     }
+
     h2 {
       font-size: 36px;
       margin: 0 0 14px;
     }
+
     h3 {
       font-size: 24px;
       margin: 0 0 10px;
     }
+
     .subtext {
       font-size: 18px;
       color: #efe4d4;
       max-width: 720px;
     }
+
     .button-row {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       margin-top: 28px;
     }
+
     .btn {
       display: inline-block;
       padding: 14px 22px;
@@ -70,62 +82,97 @@
       font-weight: bold;
       font-size: 15px;
     }
+
     .btn-primary {
       background: #d7a93b;
       color: #1f1a17;
     }
+
     .btn-secondary {
       border: 1px solid rgba(255,255,255,0.4);
       color: #fff8ef;
     }
+
     .hero-cards {
-  grid-template-columns: 2fr 1fr;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
       gap: 16px;
     }
+
     .card {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.18);
       border-radius: 24px;
       padding: 16px;
     }
-    .placeholder, .image-box {
+
+    .placeholder,
+    .image-box {
       background: rgba(0,0,0,0.18);
       border: 2px dashed rgba(255,255,255,0.18);
       border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       min-height: 500px;
       overflow: hidden;
     }
-    .image-box img {
+
+    .watermark-container {
+      position: relative;
       width: 100%;
       height: 100%;
+      min-height: inherit;
+    }
+
+    .watermark-container img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
       object-fit: cover;
       display: block;
     }
+
+    .watermark-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(255,255,255,0.22);
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      pointer-events: none;
+      text-align: center;
+      white-space: nowrap;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+      z-index: 2;
+    }
+
     section {
       padding: 64px 0;
     }
+
     .grid-2 {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 26px;
       align-items: start;
     }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
-    .panel, .price-card, .faq-card {
+
+    .panel,
+    .price-card,
+    .faq-card {
       background: #ffffff;
       border: 1px solid #d7cec2;
       border-radius: 24px;
       padding: 24px;
       box-shadow: 0 8px 24px rgba(35, 25, 18, 0.05);
     }
+
     .highlight {
       background: #fff;
       border: 1px solid #d7cec2;
@@ -133,10 +180,12 @@
       padding: 20px;
       margin-bottom: 16px;
     }
+
     .featured {
       background: #fbf1d9;
       border-color: #d7a93b;
     }
+
     .badge {
       display: inline-block;
       background: #d7a93b;
@@ -149,26 +198,32 @@
       letter-spacing: 0.18em;
       margin-bottom: 14px;
     }
+
     .price {
       font-size: 48px;
       font-weight: bold;
       margin: 18px 0;
     }
+
     .dark-section {
       background: #251d19;
       color: #f3e8d9;
     }
+
     .dark-section .faq-card {
       background: #302621;
       border-color: #544740;
       color: #f3e8d9;
     }
+
     .muted {
       color: #6c5d53;
     }
+
     .dark-section .muted {
       color: #d0c2b2;
     }
+
     .small-eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.2em;
@@ -177,19 +232,31 @@
       color: #b88417;
       margin-bottom: 10px;
     }
+
     .footer-note {
       text-align: center;
       font-size: 14px;
       color: #8b7a6e;
       padding: 18px 0 40px;
     }
+
     @media (max-width: 900px) {
-      .hero-grid, .grid-2, .grid-3, .hero-cards {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .hero-cards {
         grid-template-columns: 1fr;
       }
+
       h1 { font-size: 40px; }
       h2 { font-size: 30px; }
       .price { font-size: 40px; }
+
+      .watermark-text {
+        font-size: 18px;
+        white-space: normal;
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -205,18 +272,24 @@
           <a href="#gallery" class="btn btn-secondary">View Collection</a>
         </div>
       </div>
+
       <div class="hero-cards">
         <div class="card">
           <div class="image-box">
-            <img src="https://wyoming-art-250.vercel.app/images/journey.jpg" alt="Wyoming America 250 hero artwork" />
-<div class="watermark-text">© Wyoming America 250</div>
+            <div class="watermark-container">
+              <img src="https://wyoming-art-250.vercel.app/images/journey.jpg" alt="Wyoming America 250 hero artwork" />
+              <div class="watermark-text">© Wyoming America 250</div>
+            </div>
           </div>
           <p>Single mural presentation</p>
         </div>
+
         <div class="card">
           <div class="image-box">
-            <img src="https://wyoming-art-250.vercel.app/images/triptych.jpg" alt="Wyoming America 250 triptych artwork" />
-<div class="watermark-text">© Wyoming America 250</div>
+            <div class="watermark-container">
+              <img src="https://wyoming-art-250.vercel.app/images/triptych.jpg" alt="Wyoming America 250 triptych artwork" />
+              <div class="watermark-text">© Wyoming America 250</div>
+            </div>
           </div>
           <p>Triptych collector edition</p>
         </div>
@@ -228,13 +301,17 @@
     <div class="container">
       <div class="small-eyebrow">Collection Highlights</div>
       <h2>A gallery-ready piece built around Wyoming’s place in America’s story</h2>
+
       <div class="grid-2" style="margin-top: 28px;">
         <div class="panel">
           <div class="image-box" style="min-height: 500px; background: #eee2cf; border-color: #d7cec2;">
-            <img src="https://wyoming-art-250.vercel.app/images/featured1.jpg" alt="Main collection artwork" />
-<div class="watermark-text">© Wyoming America 250</div>
+            <div class="watermark-container">
+              <img src="https://wyoming-art-250.vercel.app/images/featured1.jpg" alt="Main collection artwork" />
+              <div class="watermark-text">© Wyoming America 250</div>
+            </div>
           </div>
         </div>
+
         <div>
           <div class="highlight">Commemorates America’s 250th Anniversary</div>
           <div class="highlight">Blends 1776 independence with Wyoming statehood in 1890</div>
@@ -246,26 +323,38 @@
       <div style="margin-top: 40px;">
         <div class="small-eyebrow">Featured Pieces</div>
         <h2>Explore the current collection and upcoming releases</h2>
+
         <div class="grid-3" style="margin-top: 24px;">
           <div class="panel">
             <div class="image-box" style="min-height: 300px; background: #eee2cf; border-color: #d7cec2;">
-              <img src="https://wyoming-art-250.vercel.app/images/featured1.jpg" alt="Featured piece one" />
+              <div class="watermark-container">
+                <img src="https://wyoming-art-250.vercel.app/images/featured1.jpg" alt="Featured piece one" />
+                <div class="watermark-text">© Wyoming America 250</div>
+              </div>
             </div>
             <h3 style="margin-top: 18px;">Featured Piece One</h3>
             <p class="muted">A Timeless Piece of History showing the True Wyoming Element in One Classic Piece.</p>
             <p><a class="btn btn-primary" href="YOUR-FEATURED-PIECE-1-LINK-HERE" target="_blank">View Details</a></p>
           </div>
+
           <div class="panel">
             <div class="image-box" style="min-height: 300px; background: #eee2cf; border-color: #d7cec2;">
-              <img src="https://wyoming-art-250.vercel.app/images/hero.jpg" alt="Featured piece two" />
+              <div class="watermark-container">
+                <img src="https://wyoming-art-250.vercel.app/images/hero.jpg" alt="Featured piece two" />
+                <div class="watermark-text">© Wyoming America 250</div>
+              </div>
             </div>
             <h3 style="margin-top: 18px;">Featured Piece Two</h3>
             <p class="muted">A Side by Side Design for the Classic Wyoming Past.</p>
             <p><a class="btn btn-primary" href="YOUR-FEATURED-PIECE-2-LINK-HERE" target="_blank">View Details</a></p>
           </div>
+
           <div class="panel">
             <div class="image-box" style="min-height: 300px; background: #eee2cf; border-color: #d7cec2;">
-              <img src="https://wyoming-art-250.vercel.app/images/journey.jpg" alt="Featured piece three" />
+              <div class="watermark-container">
+                <img src="https://wyoming-art-250.vercel.app/images/journey.jpg" alt="Featured piece three" />
+                <div class="watermark-text">© Wyoming America 250</div>
+              </div>
             </div>
             <h3 style="margin-top: 18px;">Featured Piece Three</h3>
             <p class="muted">Our Triptych layout in 3 Seperate Photos.</p>
@@ -283,11 +372,13 @@
         <h3>Birth of the Nation</h3>
         <p class="muted">Founding-era symbolism, Declaration textures, and patriotic atmosphere establish the beginning of the American story.</p>
       </div>
+
       <div class="panel">
         <div class="small-eyebrow">1890</div>
         <h3>Wyoming Statehood</h3>
         <p class="muted">Wyoming enters the Union, connecting frontier identity, western expansion, and state pride to the larger national journey.</p>
       </div>
+
       <div class="panel">
         <div class="small-eyebrow">2026</div>
         <h3>America 250</h3>
@@ -301,6 +392,7 @@
       <div class="small-eyebrow">Pricing</div>
       <h2>Simple pricing for collectors, businesses, and display spaces</h2>
       <p class="muted" style="max-width: 760px;">Positioned as premium commemorative artwork of the Wyoming History and the American 250th.</p>
+
       <div class="grid-3" style="margin-top: 30px;">
         <div class="price-card">
           <div class="small-eyebrow">One hero mural print</div>
@@ -310,6 +402,7 @@
           <p class="muted">Perfect for Homes, offices, showrooms, and patriotic display spaces.</p>
           <p><a class="btn btn-primary" href="YOUR-SHOPIFY-SINGLE-LINK-HERE" target="_blank">Own This Piece</a></p>
         </div>
+
         <div class="price-card featured">
           <div class="badge">Best Seller</div>
           <div class="small-eyebrow">Three-panel collector edition</div>
@@ -319,12 +412,13 @@
           <p class="muted">Best for your Personal Collection, lobbies, dealerships, event displays, and executive spaces.</p>
           <p><a class="btn btn-primary" href="YOUR-SHOPIFY-TRIPTYCH-LINK-HERE" target="_blank">Reserve Collector Set</a></p>
         </div>
+
         <div class="price-card">
           <div class="small-eyebrow">Custom wall installation</div>
           <h3>Large Feature Installation</h3>
           <div class="price">$1,495+</div>
           <p class="muted">Oversized triptych or panoramic wall set for premium installations.</p>
-          <p class="muted">Ideal for public venues, corporate spaces, museums, and America 250 displays for it's larger size and customization.</p>
+          <p class="muted">Ideal for public venues, corporate spaces, museums, and America 250 displays for its larger size and customization.</p>
           <p><a class="btn btn-primary" href="YOUR-CONTACT-OR-SHOPIFY-LINK-HERE" target="_blank">Request Custom Quote</a></p>
         </div>
       </div>
@@ -338,15 +432,18 @@
         <h2>Designed to sell as both patriotic décor and Wyoming heritage artwork</h2>
         <p class="muted">This collection is positioned for patriotic buyers, Wyoming residents, collectors, businesses, lodges, western-themed spaces, and public-facing America 250 displays.</p>
       </div>
+
       <div>
         <div class="faq-card">
           <h3>What makes this collection unique?</h3>
           <p class="muted">Each piece is built around Wyoming’s story inside the larger American timeline—linking 1776, Wyoming statehood in 1890, and America 250 into one collectible visual narrative.</p>
         </div>
+
         <div class="faq-card" style="margin-top: 16px;">
           <h3>Are custom sizes available?</h3>
           <p class="muted">Yes. Custom wall installations, larger canvases, and event display formats can be quoted separately.</p>
         </div>
+
         <div class="faq-card" style="margin-top: 16px;">
           <h3>Can I order the triptych as separate panels?</h3>
           <p class="muted">Yes. The three-panel collection can be sold as a complete set or quoted as individual panels.</p>
@@ -360,17 +457,3 @@
   </div>
 </body>
 </html>
-.watermark {
-  position: relative;
-}
-
-.watermark-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(255,255,255,0.25);
-  font-size: 28px;
-  font-weight: bold;
-  pointer-events: none;
-}
