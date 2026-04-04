@@ -209,12 +209,14 @@
         <div class="card">
           <div class="image-box">
             <img src="https://wyoming-art-250.vercel.app/images/journey.jpg" alt="Wyoming America 250 hero artwork" />
+<div class="watermark-text">© Wyoming America 250</div>
           </div>
           <p>Single mural presentation</p>
         </div>
         <div class="card">
           <div class="image-box">
             <img src="https://wyoming-art-250.vercel.app/images/triptych.jpg" alt="Wyoming America 250 triptych artwork" />
+<div class="watermark-text">© Wyoming America 250</div>
           </div>
           <p>Triptych collector edition</p>
         </div>
@@ -230,6 +232,7 @@
         <div class="panel">
           <div class="image-box" style="min-height: 500px; background: #eee2cf; border-color: #d7cec2;">
             <img src="https://wyoming-art-250.vercel.app/images/featured1.jpg" alt="Main collection artwork" />
+<div class="watermark-text">© Wyoming America 250</div>
           </div>
         </div>
         <div>
@@ -357,3 +360,18 @@
   </div>
 </body>
 </html>
+.watermark {
+  position: relative;
+}
+
+.watermark-text {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  color: rgba(255,255,255,0.65);
+  font-size: 14px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.3);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
