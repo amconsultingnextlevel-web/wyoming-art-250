@@ -95,9 +95,8 @@
 
     .hero-cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      align-items: stretch;
+      grid-template-columns: 1fr;
+      gap: 18px;
     }
 
     .card {
@@ -107,45 +106,51 @@
       padding: 16px;
     }
 
+    .hero-image-box,
     .image-box {
       position: relative;
-      background: rgba(0,0,0,0.18);
       border: 2px dashed rgba(255,255,255,0.18);
       border-radius: 18px;
       overflow: hidden;
-      min-height: 380px;
+      background: rgba(0,0,0,0.18);
+    }
+
+    .hero-image-box img,
+    .image-box img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 1;
+      object-fit: contain;
+      object-position: center center;
+      background: rgba(0,0,0,0.22);
+    }
+
+    .single-hero {
+      min-height: 420px;
+    }
+
+    .triptych-hero {
+      min-height: 300px;
     }
 
     .image-box.tall {
-      min-height: 560px;
+      min-height: 500px;
     }
 
     .image-box.small {
       min-height: 300px;
     }
 
-    .image-box img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      z-index: 1;
-    }
-
-    .triptych-fit img {
-  object-fit: contain;
-  background: rgba(0,0,0,0.2);
-}
-
     .watermark-text {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: rgba(255,255,255,0.22);
-      font-size: 26px;
+      color: rgba(255,255,255,0.20);
+      font-size: 24px;
       font-weight: 700;
       letter-spacing: 1px;
       text-shadow: 0 1px 3px rgba(0,0,0,0.35);
@@ -153,7 +158,6 @@
       z-index: 3;
       white-space: nowrap;
       text-align: center;
-      width: auto;
     }
 
     section {
@@ -173,7 +177,9 @@
       gap: 22px;
     }
 
-    .panel, .price-card, .faq-card {
+    .panel,
+    .price-card,
+    .faq-card {
       background: #ffffff;
       border: 1px solid #d7cec2;
       border-radius: 24px;
@@ -251,14 +257,29 @@
     @media (max-width: 900px) {
       .hero-grid,
       .grid-2,
-      .grid-3,
-      .hero-cards {
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
       h1 { font-size: 40px; }
       h2 { font-size: 30px; }
       .price { font-size: 40px; }
+
+      .single-hero {
+        min-height: 340px;
+      }
+
+      .triptych-hero {
+        min-height: 240px;
+      }
+
+      .image-box.tall {
+        min-height: 360px;
+      }
+
+      .image-box.small {
+        min-height: 240px;
+      }
 
       .watermark-text {
         font-size: 18px;
@@ -283,7 +304,7 @@
 
       <div class="hero-cards">
         <div class="card">
-          <div class="image-box tall">
+          <div class="hero-image-box single-hero">
             <img src="https://wyoming-art-250.vercel.app/images/journey.jpg" alt="Wyoming America 250 hero artwork" />
             <div class="watermark-text">© Wyoming America 250</div>
           </div>
@@ -291,7 +312,7 @@
         </div>
 
         <div class="card">
-          <div class="image-box tall triptych-fit">
+          <div class="hero-image-box triptych-hero">
             <img src="https://wyoming-art-250.vercel.app/images/triptych.jpg" alt="Wyoming America 250 triptych artwork" />
             <div class="watermark-text">© Wyoming America 250</div>
           </div>
